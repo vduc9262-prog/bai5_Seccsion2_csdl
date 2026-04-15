@@ -12,11 +12,10 @@ CREATE TABLE Wallets (
 
 CREATE TABLE Transactions (
     TransID INT,
-    WalletID INT NOT NULL REFERENCES Wallets(WalletID),
+    WalletID INT auto_increment ,
     TransType VARCHAR(50) CHECK (TransType IN ('Nap', 'Rut', 'ThanhToan')),
     Amount DECIMAL(18,2) NOT NULL CHECK (Amount > 0),
     Status VARCHAR(20) DEFAULT 'ThanhCong',
     CreatedAt DATETIME ,
     PRIMARY KEY (TransID)
 );
-
