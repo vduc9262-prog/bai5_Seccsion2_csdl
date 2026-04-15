@@ -4,7 +4,7 @@ use bai5_data;
 
 CREATE TABLE Wallets (
     WalletID INT , 
-    CustomerID INT UNIQUE NOT NULL, 
+    CustomerID INT  NOT NULL UNIQUE, 
     Balance DECIMAL(18,2) DEFAULT 0 CHECK (Balance >= 0),
     CreatedAt DATETIME NOT NULL  ,
      PRIMARY KEY (WalletID)
