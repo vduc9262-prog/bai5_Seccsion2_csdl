@@ -4,7 +4,7 @@ use bai5_data;
 
 CREATE TABLE Wallets (
     WalletID INT , 
-    CustomerID INT  NOT NULL UNIQUE, 
+    CustomerID INT UNIQUE NOT NULL, 
     Balance DECIMAL(18,2) DEFAULT 0 CHECK (Balance >= 0),
     CreatedAt DATETIME NOT NULL  ,
      PRIMARY KEY (WalletID)
@@ -13,9 +13,10 @@ CREATE TABLE Wallets (
 CREATE TABLE Transactions (
     TransID INT,
     WalletID INT auto_increment ,
-    TransType VARCHAR(50) CHECK (TransType IN ('Nap', 'Rut', 'ThanhToan')),
+    TransType VARCHAR(50) CHECK ( ('Nap', 'Rut', 'ThanhToan')),
     Amount DECIMAL(18,2) NOT NULL CHECK (Amount > 0),
     Status VARCHAR(20) DEFAULT 'ThanhCong',
     CreatedAt DATETIME ,
     PRIMARY KEY (TransID)
 );
+
