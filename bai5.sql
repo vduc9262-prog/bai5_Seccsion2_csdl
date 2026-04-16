@@ -13,7 +13,7 @@ CREATE TABLE Wallets (
 CREATE TABLE Transactions (
     TransID INT,
     WalletID INT auto_increment ,
-    TransType VARCHAR(50) CHECK ( ('Nap', 'Rut', 'ThanhToan')),
+    TransType VARCHAR(50) ,
     Amount DECIMAL(18,2) NOT NULL CHECK (Amount > 0),
     Status VARCHAR(20) DEFAULT 'ThanhCong',
     CreatedAt DATETIME ,
